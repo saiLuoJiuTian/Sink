@@ -1,20 +1,24 @@
 {
   "name": "sink",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "packageManager": "pnpm@9.1.2",
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
+    "build:map": "node scripts/build-map.js",
     "preview": "wrangler pages dev dist",
     "deploy": "wrangler pages deploy dist",
-    "postinstall": "nuxt prepare",
+    "postinstall": "npm run build:map && nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
     "wrangler": "wrangler",
     "lint-staged": "lint-staged"
+  },
+  "engines": {
+    "node": ">=20.11"
   },
   "dependencies": {
     "@unovis/ts": "^1.4.1",
@@ -40,6 +44,7 @@
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/eslint-config": "^0.3.13",
     "@nuxthub/core": "^0.5.17",
+    "@nuxtjs/color-mode": "^3.4.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

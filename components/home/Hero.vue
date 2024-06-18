@@ -10,12 +10,6 @@ const { title, description } = useAppConfig()
   <main
     class="grid pt-8 pb-8 lg:grid-cols-2 place-items-center md:py-12"
   >
-    <div class="hidden py-6 md:order-1 md:block">
-      <div
-        class="w-[512px]"
-        v-html="heroImg"
-      />
-    </div>
     <div>
       <h1
         class="text-5xl font-bold lg:text-6xl xl:text-7xl lg:tracking-tight xl:tracking-tighter"
@@ -29,6 +23,7 @@ const { title, description } = useAppConfig()
         <HomeLink
           href="/dashboard"
           target="_blank"
+          title="Dashboard"
           class="flex items-center justify-center gap-1"
           rel="noopener"
         >
@@ -42,6 +37,7 @@ const { title, description } = useAppConfig()
           type="outline"
           rel="noopener"
           href="https://github.com/ccbikai/sink"
+          title="Github"
           class="flex items-center justify-center gap-1"
           target="_blank"
         >
@@ -51,6 +47,12 @@ const { title, description } = useAppConfig()
           GitHub Repo
         </HomeLink>
       </div>
+    </div>
+    <div class="hidden py-6 md:block">
+      <div
+        class="w-[512px]"
+        v-html="heroImg"
+      />
     </div>
   </main>
 </template>
